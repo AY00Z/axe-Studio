@@ -38,7 +38,10 @@ This project implements a centralized authentication and configuration managemen
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-  git clone https://github.com/AY00Z/axe-Studio.git
-  cd axe-Studio
+```bash
+# 1. Clone repo
+git clone https://github.com/AY00Z/axe-Studio.git
+cd axe-Studio
+
+
+
