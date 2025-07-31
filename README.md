@@ -40,5 +40,5 @@ This project implements a centralized authentication and configuration managemen
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/axefinance/acp-central-auth.git
-   cd acp-central-auth
+  git clone https://github.com/AY00Z/axe-Studio.git
+  cd axe-Studio
