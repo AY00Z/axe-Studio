@@ -36,12 +36,7 @@ This project implements a centralized authentication and configuration managemen
 - Node.js (for Angular
 
 
-### Installation
 
-```bash
-# 1. Clone repo
-git clone https://github.com/AY00Z/axe-Studio.git
-cd axe-Studio
 
 
 
