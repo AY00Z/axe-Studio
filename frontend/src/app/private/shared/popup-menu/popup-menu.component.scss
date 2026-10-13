@@ -1,0 +1,41 @@
+.popup-menu {
+  .popup-container {
+    padding: 16px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #4a89dc;
+    margin-top: 17px;
+  }
+
+  .popup-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .popup-btn {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F0F5FC;
+    border: 1px solid #4a89dc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+    
+    &:hover {
+      background: #e0e0e0;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      color: #4a89dc;
+    }
+
+    &.active {
+      background-color: #26415E;
+      color: white;
+      border-color: #26415E;
+    }
+  }
+}

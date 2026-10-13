@@ -1,0 +1,105 @@
+.project-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 260px;
+  width: 340px;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-header {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+
+  }
+
+  .acronym-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .acronym {
+    display: inline-block;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.6rem;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .more-link {
+    color: #1890ff;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .title {
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin-top: -10px;
+  }
+
+  .description {
+    color: white;
+    line-height: 1.6;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-weight: 520;
+    font-size: 14px;
+  }
+
+  ::ng-deep .ant-card-body {
+    padding: 1.5rem;
+  }
+}
+
+.more-icon {
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.more-container {
+  position: relative;
+}
+
+.dropdown-menu {
+  background:white;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  min-width: 170px;
+  margin-bottom: 20px;
+
+  li {
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: normal;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+   
+
+    &:hover {
+      background-color: white;
+    }
+  }
+}

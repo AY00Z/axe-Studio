@@ -1,0 +1,41 @@
+<div *ngIf="project$ | async as project" class="project-details">
+  <ng-container *ngIf="project">
+    <nz-card class="project-header">
+      <div class="header-content">
+        <div>
+          <h2 nz-typography>{{ project.acronym }} - {{ project.title }}</h2>
+          <p nz-typography class="project-description">{{ project.description }}</p>
+        </div>
+        <div class="actions-dropdown">
+          <span 
+            nz-icon 
+            nzType="more" 
+            nzTheme="outline" 
+            nz-dropdown
+            [nzDropdownMenu]="projectMenu"
+            nzTrigger="click"
+            nzPlacement="bottomRight"
+          ></span>
+          <nz-dropdown-menu #projectMenu="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item (click)="showDeleteConfirm(project)">
+                <span nz-icon nzType="delete" nzTheme="outline" class="delete-icon"></span>
+                Delete Project
+              </li>
+            </ul>
+          </nz-dropdown-menu>
+        </div>
+      </div>
+    </nz-card>
+
+    <h3 class="config-title">Configuration Files:</h3>
+  </ng-container>
+</div>
+
+<nz-alert 
+  *ngIf="(project$ | async) === null" 
+  class="error-message"
+  nzType="error"
+  nzMessage="Project not found or error loading project details"
+  nzShowIcon>
+</nz-alert>

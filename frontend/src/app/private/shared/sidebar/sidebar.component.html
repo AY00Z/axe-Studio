@@ -1,0 +1,14 @@
+<nav class="sidebar">
+  <div class="info-cadre" [style.background-color]="currentCadreColor">
+    <span class="cadre-text">{{ currentCadreText }}</span>
+  </div>
+  <ul nz-menu nzMode="inline">
+    <ng-container *ngFor="let item of menuItems">
+      <li nz-menu-item
+          (click)="setActive(item.id)"
+          [nzSelected]="activeIcon === item.id">
+        <span nz-icon [nzType]="item.icon"></span>
+      </li>
+    </ng-container>
+  </ul>
+</nav>

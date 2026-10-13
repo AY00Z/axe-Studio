@@ -1,0 +1,137 @@
+.config-center-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 1500px;
+  margin: 0 auto 20px 70px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-left: 4px solid #4a89dc;
+  
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.config-table {
+  margin-bottom: 20px;
+  margin-left: 60px;
+}
+
+.config-header {
+  display: flex;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border-radius: 4px 4px 0 0;
+  width: 93%;
+  margin-bottom: 5px;
+}
+
+.config-row {
+  display: flex;
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.config-key {
+  flex: 1;
+  font-weight: 600;
+  color: #26415e;
+  font-size: 19px;
+}
+
+.config-value {
+  flex: 2;
+}
+
+.config-input,
+.alone-input {
+  width: 90%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  height: 30px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+
+  &:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+  }
+}
+
+.alone-input {
+  width: 92.8%;
+  margin-bottom: 5px;
+}
+
+.form-actions {
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.save-btn {
+  background-color: #26415e;
+  color: white;
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  width: 150px;
+  height: 44px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 25px;
+  margin-right: 100px;
+
+  &:hover {
+    background-color: #39608a;
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+}
+
+.success-message,
+.error-message {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.nested-container {
+  padding-left: 15px;
+}
+
+::ng-deep .ant-modal-footer {
+  .ant-btn-primary {
+    background-color: #26415e;
+    border-color: grey;
+    font-weight: 500;
+
+    
+    &:hover {
+      background-color: #39608a;
+      border-color: white;
+    }
+  }
+}
+
+.jomla{
+  font-weight: 400;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

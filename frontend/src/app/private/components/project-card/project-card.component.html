@@ -1,0 +1,43 @@
+<nz-card 
+  class="project-card"
+  [nzBordered]="true"
+  [ngStyle]="{'background-color': getAcronymColor(), 'border-top': '5px solid ' + getAcronymColor()}"
+ 
+>
+  <div class="card-header">
+    <div class="acronym-container">
+      <div class="acronym" [style.background]="'white'" [style.color]="getAcronymColor()">
+        {{ acronym }}
+      </div>
+      <div class="extra-container">
+        <ng-container *ngTemplateOutlet="extraTemplate"></ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <h3 class="title">{{ title }}</h3>
+    <p class="description">{{ description }}</p>
+  </div>
+</nz-card>
+
+<ng-template #extraTemplate>
+  <div class="more-container" (click)="$event.stopPropagation()">
+    <span 
+      nz-icon 
+      nzType="ellipsis" 
+      nzTheme="outline" 
+      class="more-icon"
+      [nzDropdownMenu]="menu"
+      nz-dropdown
+      nzTrigger="click"
+      nzPlacement="bottomRight"
+      (click)="$event.stopPropagation()"  
+    ></span>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu>
+        <li nz-menu-item (click)="handleConfigurationClick()">Configuration</li>
+        <li nz-menu-item (click)="handleUpdateClick()">Update Project</li>
+      </ul>
+    </nz-dropdown-menu>
+  </div>
+</ng-template>

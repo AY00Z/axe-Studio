@@ -1,0 +1,56 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  background: #F0F5FC;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  h1 {
+    font-size: 3rem;
+    color: #26415E;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: grey;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+  
+  .custom-button {
+    height: auto;
+    background: #26415E;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.3rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: normal;
+    
+    &:hover {
+      background: #2a4766;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    }
+    
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  }
+
+  /* Animation douce */
+  animation: fadeIn 0.6s ease-out;
+}

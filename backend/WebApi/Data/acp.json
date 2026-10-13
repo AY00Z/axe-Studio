@@ -1,0 +1,51 @@
+{
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "AxeWorkflowEntitiesModel": "Server=192.168.1.84;Database=AcpWorkflowEngine_v9;User ID=axecreditportal;Password=axefinance; Trusted_Connection=True; MultipleActiveResultSets=True; Integrated Security=False; encrypt=false",
+    "AxeWorkflowEntitiesModelArchived": "Server=192.168.1.84;Database=AcpWorkflowEngine_v7_Archive;User ID=axecreditportal;Password=axefinance; Trusted_Connection=True; MultipleActiveResultSets=True; Integrated Security=False; encrypt=false",
+    "acp": "Server=192.168.1.84;Database=Axe_Credit_Dev_9;User ID=axecreditportal;Password=axefinance; Trusted_Connection=True; MultipleActiveResultSets=True; Integrated Security=False; encrypt=false",
+    "AxeBatchPipeLine": "Server=192.168.1.84;Database=Axe_Credit_Batch_Pipline_Dev_V7;User ID=axecreditportal;Password=axefinance; Trusted_Connection=True; MultipleActiveResultSets=True; Integrated Security=False; encrypt=false",
+    "businessAddress": "https://localhost:90",
+    "Snapshot_snap": "http://localhost:5000",
+    "Snapshot_Snapshot": "http://localhost:5000",
+    "Snapshot_Snapshot1": "http://localhost:5000",
+    "APIManagement": "http://localhost:5055",
+    "XmlAccessAPI": "http://localhost:202"
+  },
+  "WorkflowEngine": {
+    "FaultedInstancesMaxResumptionAttempts": 5
+  },
+  "SmtpSettings": "{\u0022Host\u0022:\u0022smtp.office365.com\u0022,\u0022Port\u0022:587,\u0022UserName\u0022:\u0022notification@axefinance.com\u0022,\u0022Password\u0022:\u0022axefinance2018*\u0022,\u0022EnableSsl\u0022:true}",
+  "mobileNotificationAddress": "",
+  "AxeBatchPipeLine": "http://localhost:2222/api",
+  "FaultedInstancesMaxResumptionAttempts": 3,
+  "ResumeDelayService": {
+    "Activated": "false",
+    "SleepDuration": "60000",
+    "AttemptToRunFailOver": "0"
+  },
+  "Authentication": {
+    "AuthenticationMechanism": "ad",
+    "OpenIdConnect": {
+      "OidcRedirectURI": "http://localhost/axeBpm/client/callBack",
+      "OidcUserClaimSource": "accesstoken",
+      "OidcUserClaim": "unique_name",
+      "OidcBrowserTimeOut": "40"
+    }
+  },
+  "RabbitMq": {
+    "hostName": "localhost:4200",
+    "userName": "guest",
+    "password": "guest",
+    "port": "5672",
+    "ssl": false,
+    "dbConnectionString": ""
+  },
+  "ReportingFramework": "false",
+  "WSHttpBinding": {
+    "DesignerService": {
+      "MaxReceivedMessageSize": 2147483647,
+      "MaxBufferPoolSize": "2147483647"
+    }
+  }
+}

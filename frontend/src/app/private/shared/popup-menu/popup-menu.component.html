@@ -1,0 +1,14 @@
+<div class="popup-menu">
+  <div class="popup-container">
+    <div nz-row [nzGutter]="[0, 0]" class="popup-grid">
+      <div nz-col [nzSpan]="6" *ngFor="let option of menuOptions">
+        <button nz-button 
+                class="popup-btn"
+                [class.active]="isActive(option.value)"
+                (click)="selectOption(option.label)">
+          {{option.label}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

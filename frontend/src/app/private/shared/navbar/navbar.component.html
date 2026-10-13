@@ -1,0 +1,24 @@
+<nz-header class="navbar">
+  <div class="navbar-content">
+    
+    
+    <span class="title" (click)="navigateToDashboard()">{{ title }}</span>
+    
+    <span *ngIf="showDefaultIcon" 
+          nz-icon nzType="unordered-list" 
+          nzTheme="outline"
+          class="default-icon"
+          [nzDropdownMenu]="menu"
+          nz-dropdown
+          nzPlacement="bottomRight"
+          nzTrigger="click">
+    </span>
+
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <app-popup-menu 
+        [currentRoute]="currentRoute"
+        (optionSelected)="selectOption($event)">
+      </app-popup-menu>
+    </nz-dropdown-menu>
+  </div>
+</nz-header>

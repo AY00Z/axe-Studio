@@ -1,0 +1,63 @@
+<form nz-form [formGroup]="projectForm" (ngSubmit)="submitForm()" class="project-form">
+  <nz-form-item>
+    <nz-form-label nzRequired>Acronym</nz-form-label>
+    <nz-form-control>
+      <input nz-input formControlName="acronym" placeholder="e.g. BPM">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label nzRequired>Path</nz-form-label>
+    <nz-form-control>
+      <input nz-input formControlName="path" placeholder="e.g. bpm">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label nzRequired>Title</nz-form-label>
+    <nz-form-control>
+      <input nz-input formControlName="title" placeholder="Project title">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label>Description</nz-form-label>
+    <nz-form-control>
+      <textarea nz-input formControlName="description" rows="3"></textarea>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-divider nzText="Configuration Files"></nz-divider>
+  
+  <div formArrayName="configurationFiles" *ngFor="let config of configurationFiles.controls; let i = index">
+    <div [formGroupName]="i" class="config-file-group">
+      <nz-form-item>
+        <nz-form-label nzRequired>Config File Name</nz-form-label>
+        <nz-form-control>
+          <input nz-input formControlName="fileName" placeholder="e.g. C:/Users/Desktop/Data/bpm.json">
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label>Visible Keys</nz-form-label>
+        <nz-form-control>
+          <input nz-input formControlName="visibleKeys" placeholder="Use Wildcards e.g. * for all">
+        </nz-form-control>
+      </nz-form-item>
+
+      <button nz-button nzType="text" nzDanger (click)="removeConfigFile(i)">
+        Remove Configuration
+      </button>
+    </div>
+  </div>
+
+  <button nz-button nzType="dashed" (click)="addConfigFile()" class="add-config-btn">
+    Add Configuration File
+  </button>
+
+  <div class="form-actions">
+    <button nz-button nzType="primary">
+      {{ isUpdateMode ? 'Update Project' : 'Create Project' }}
+    </button>
+  </div>
+</form>

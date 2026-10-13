@@ -1,0 +1,38 @@
+.navbar {
+  background-color: white;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #26415E;
+  padding: 0 24px;
+
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  
+
+  .title {
+    font-size: 22px;
+    font-weight: bold;
+    flex-grow: 1;
+    color: grey;
+    margin-bottom: 4px;
+    margin-left: 15px;
+
+   
+  }
+
+  .default-icon {
+    font-size: 30px;
+    color: grey;
+    cursor: pointer;
+    transition: transform 0.2s;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

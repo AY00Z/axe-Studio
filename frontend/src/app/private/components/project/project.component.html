@@ -1,0 +1,27 @@
+<app-project-details></app-project-details>
+
+<div class="config-container">
+  <ng-container *ngIf="isLoading">
+    <div class="loading-message">Loading configurations...</div>
+  </ng-container>
+
+  <ng-container *ngIf="errorMessage">
+    <div class="error-message">{{ errorMessage }}</div>
+  </ng-container>
+
+  <ng-container *ngIf="!isLoading && !errorMessage">
+    <div *ngFor="let configFile of configFiles" class="config-section">
+      <h3 (click)="toggleConfig(configFile)" class="config-header">
+        {{ getFileName(configFile) }}
+        <span class="toggle-icon">{{ expandedConfigs[configFile] ? '▼' : '▶' }}</span>  
+      </h3>
+      <div *ngIf="expandedConfigs[configFile]" class="config-content">
+        <app-config-center [configName]="configFile"></app-config-center>
+      </div>
+    </div>
+
+    <div *ngIf="configFiles.length === 0" class="no-configs-message">     
+      No configuration files found for this project
+    </div>
+  </ng-container>
+</div>

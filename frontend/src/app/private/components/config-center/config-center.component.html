@@ -1,0 +1,110 @@
+<div class="config-center-container" [formGroup]="configForm">
+  <div class="config-table">
+    <ng-container *ngFor="let field of configFields">
+      <!-- Parent Field -->
+      <div *ngIf="field.isParent" class="config-header">
+        <div class="config-key">{{ field.displayKey }}</div>
+      </div>
+      
+      <!-- Children Fields -->
+      <ng-container *ngIf="field.children">
+        <div class="nested-container">
+          <ng-container *ngTemplateOutlet="fieldTemplate; context: { $implicit: field.children }"></ng-container>
+        </div>
+      </ng-container>
+      
+      <!-- Simple Field -->
+      <div *ngIf="!field.isParent" class="config-row">
+        <div class="config-key">{{ field.displayKey }}</div>   
+        <div class="config-value">
+          <nz-input-group *ngIf="field.type !== 'number'">
+            <input nz-input 
+                  [type]="'text'"
+                  [formControlName]="field.key"
+                  class="config-input">
+          </nz-input-group>
+          <nz-input-number *ngIf="field.type === 'number'"
+                  [formControlName]="field.key"
+                  class="config-input"
+                  [nzMin]="0"
+                  [nzStep]="1">
+          </nz-input-number>
+        </div>
+      </div>
+    </ng-container>
+    
+    <!-- Recursive Template -->
+    <ng-template #fieldTemplate let-children>
+      <ng-container *ngFor="let child of children">
+        <!-- Parent Field -->
+        <div *ngIf="child.isParent" class="config-header">
+          <div class="config-key">{{ child.displayKey }}</div>
+        </div>
+        
+        <!-- Children Fields -->
+        <ng-container *ngIf="child.children">
+          <div class="nested-container">
+            <ng-container *ngTemplateOutlet="fieldTemplate; context: { $implicit: child.children }"></ng-container>
+          </div>
+        </ng-container>
+        
+        <!-- Simple Field -->
+        <div *ngIf="!child.isParent" class="config-row">
+          <div class="config-key">{{ child.displayKey }}</div>
+          <div class="config-value">
+            <nz-input-group *ngIf="child.type !== 'number'">
+              <input nz-input 
+                    [type]="'text'"
+                    [formControlName]="child.key"
+                    class="config-input">
+            </nz-input-group>
+            <nz-input-number *ngIf="child.type === 'number'"
+                    [formControlName]="child.key"
+                    class="config-input"
+                    [nzMin]="0"
+                    [nzStep]="1">
+            </nz-input-number>
+          </div>
+        </div>
+      </ng-container>
+    </ng-template>
+  </div>
+
+  <div class="form-actions">
+    <button 
+      nz-button
+      nzType="primary"
+      type="button" 
+      (click)="showConfirmModal()" 
+      [nzLoading]="isSaving"
+      class="save-btn">
+      <span>Save</span>
+    </button>
+
+    <nz-modal 
+      [(nzVisible)]="isConfirmModalVisible" 
+      nzTitle="Confirm Saving"
+      (nzOnCancel)="handleConfirmModalCancel()" 
+      (nzOnOk)="handleConfirmModalOk()">
+      <ng-container *nzModalContent>
+        <p class="jomla">This will update the configuration permanently.</p>
+      </ng-container>
+      <div *nzModalFooter>
+        <button nz-button nzType="default" (click)="handleConfirmModalCancel()">Cancel</button>
+        <button nz-button nzType="primary" nzDanger (click)="handleConfirmModalOk()">Confirm</button>
+      </div>
+    </nz-modal>
+
+    <nz-alert *ngIf="saveSuccess" 
+              nzType="success" 
+              nzMessage="Configuration saved successfully!"
+              class="success-message">
+    </nz-alert>
+
+    <nz-alert *ngIf="errorMessage" 
+              nzType="error" 
+              [nzMessage]="errorMessage"
+              class="error-message">
+    </nz-alert>
+  </div>
+</div>

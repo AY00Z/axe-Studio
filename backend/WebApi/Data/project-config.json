@@ -1,0 +1,101 @@
+{
+  "projects": [
+    {
+      "acronym": "BRM",
+      "path": "brm",
+      "title": "Business Rule Management",
+      "description": "BRM is a leading provider of no-code, business process automation software.",
+      "keyMappings": [
+        {
+          "configFileName": "brm.json",
+          "visibleKeys": [
+            "*"
+          ]
+        }
+      ]
+    },
+    {
+      "acronym": "ACP",
+      "path": "acp",
+      "title": "Axe Credit Portal",
+      "description": "ACP is a leading provider of no-code, business process automation software.",
+      "keyMappings": [
+        {
+          "configFileName": "C:\\Users\\aya20\\source\\repos\\backend\\backend\\WebApi\\Data\\acp.json",
+          "visibleKeys": [
+            "ConnectionStrings.*",
+            "RabbitMq.hostName"
+          ]
+        },
+        {
+          "configFileName": "C:\\Users\\aya20\\source\\repos\\backend\\backend\\WebApi\\Data\\acp-config.json",
+          "visibleKeys": [
+            "*",
+            "RabbitMq.hostName"
+          ]
+        }
+
+      ]
+    },
+    {
+      "acronym": "GUI",
+      "path": "gui",
+      "title": "Graphical User Interface",
+      "description": "GUI is a leading provider of no-code, business process automation software.",
+      "keyMappings": [
+        {
+          "configFileName": "gui.json",
+          "visibleKeys": [
+            "*"
+          ]
+        },
+        {
+          "configFileName": "acp.json",
+          "visibleKeys": [
+            "*"
+          ]
+        }
+      ]
+    },
+    {
+      "acronym": "IAM",
+      "path": "iam",
+      "title": "Identity Access Management",
+      "description": "IAM is a leading provider of no-code, business process automation software.",
+      "keyMappings": [
+        {
+          "configFileName": "acp.json",
+          "visibleKeys": [
+            "ConnectionStrings.*",
+            "RabbitMq"
+          ]
+        }
+      ]
+    },
+    {
+      "acronym": "DMS",
+      "path": "dms",
+      "title": "Document Management System",
+      "description": "DMS is a leading provider of no-code , business process automation software",
+      "keyMappings": [
+        {
+          "configFileName": "brm.json",
+          "visibleKeys": [
+            "*"
+          ]
+        },
+        {
+          "configFileName": "brm-config.json",
+          "visibleKeys": []
+        }
+      ]
+    },
+    {
+      "acronym": "MLP",
+      "path": "mlp",
+      "title": "Machine Learning Pipeline",
+      "description": "MLP is a leading provider of no-code, business process automation software.",
+      "keyMappings": []
+    }
+  ]
+}

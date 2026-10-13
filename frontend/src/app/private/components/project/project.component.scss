@@ -1,0 +1,89 @@
+.config-container {
+  margin-top: 20px;
+
+  .loading-message {
+    text-align: center;
+    padding: 40px 0;
+    color: #34495e;
+  }
+
+  .error-message {
+    color: #721c24;
+    background-color: #de0b1c;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  .config-section {
+   
+
+    .config-header {
+      color: #2c3e50;
+      background-color: white;
+      border-left: 3px solid #4a89dc;
+      font-size: 17px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      user-select: none;
+      font-weight: 400;
+      width: 1500px;
+      height: 50px;
+      margin-left: 70px;
+      padding-left: 20px; // Added left padding for the text
+      align-items: center; // Ensure vertical alignment
+      font-family: 'Courier New', Courier, monospace;
+      
+      &:hover {
+        background-color: #fcfdff;
+        border-left-width: 6px;
+        border-bottom: 1px solid #4a89dc;
+      }
+
+      .toggle-icon {
+        color: #2c3e50;
+        font-size: 13px;
+        margin-right: 20px; // Added right margin for the icon
+      }
+      
+      h3 {
+        margin-left: 10px; // Specific margin for the h3 element
+        margin-bottom: 0; // Remove default bottom margin
+      
+      }
+    }
+
+    .config-content {
+      .config-files {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          padding: 0.75rem 1rem;
+          margin-bottom: 0.5rem;
+          background-color: #ffffff;
+          border-left: 4px solid #4a89dc;
+          border-bottom: 1px solid #e1e5eb;
+          color: #2c3e50;
+          font-family: 'Courier New', Courier, monospace;
+          transition: all 0.2s ease;
+          border-radius: 0 4px 4px 0;
+
+          &:hover {
+            background-color: #fcfdff;
+            border-left-width: 6px;
+            border-bottom: 2px solid #4a89dc;
+          }
+        }
+      }
+    }
+  }
+
+  .no-configs-message {
+    padding: 20px 0;
+    color: #34495e;
+    text-align: center;
+  }
+}

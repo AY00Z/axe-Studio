@@ -1,0 +1,37 @@
+/* acp-callback.component.scss */
+.auth-callback-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 1000;
+
+  .auth-callback-content {
+    text-align: center;
+    padding: 34px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    .spinner-text {
+      color: #333;
+      font-size: 16px;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    ::ng-deep .ant-spin-dot-item {
+      background-color: #60B5FF;
+    }
+
+    ::ng-deep .ant-spin-text {
+      padding-top: 10px;
+    }
+  }
+}
+

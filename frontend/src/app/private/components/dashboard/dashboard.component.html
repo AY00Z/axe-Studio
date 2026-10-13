@@ -1,0 +1,22 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <h1>{{ title }}</h1>
+    <p class="subtitle">{{ subtitle }}</p>
+  </header>
+
+  <nz-spin [nzSpinning]="isLoading">
+    <div class="projects-grid" *ngIf="!isLoading">
+      <app-project-card 
+        *ngFor="let project of projects"
+        [acronym]="project.acronym"
+        [title]="project.title"
+        [description]="project.description"
+        [isActive]="isProjectActive(project.path)"
+        [path]="project.path"
+        (updateProject)="handleUpdateProject($event)"
+        (click)="navigateToProject(project.path)">
+      </app-project-card>
+      <app-add></app-add>
+    </div>
+  </nz-spin>
+</div>

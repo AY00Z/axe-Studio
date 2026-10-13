@@ -1,0 +1,78 @@
+<div class="login-container">
+  <div class="left-section">
+    <div class="logo-container">
+      <span class="axe-logo"></span>
+    </div>
+    
+    <form nz-form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <nz-form-item class="input">
+        <nz-form-label nzFor="username">Login</nz-form-label>
+        <nz-form-control>
+          <input 
+            nz-input 
+            formControlName="username" 
+            class="champs" 
+            placeholder="Username" 
+            required
+          >
+        </nz-form-control>
+      </nz-form-item>
+      
+      <nz-form-item class="input">
+        <nz-form-label nzFor="password">Password</nz-form-label>
+        <nz-form-control>
+          <input 
+            nz-input 
+            [type]="passwordVisible ? 'text' : 'password'" 
+            class="champs" 
+            formControlName="password" 
+            placeholder="Password" 
+            required
+          >
+        
+        </nz-form-control>
+      </nz-form-item>
+      
+      <button 
+        nz-button 
+        nzType="primary" 
+        class="login-button" 
+        [disabled]="!loginForm.valid"
+        [nzLoading]="isLoading"
+      >
+        Login
+      </button>
+
+       <button 
+        nz-button 
+        nzType="default"
+        class="azure-login-button"
+        (click)="loginWithAzure()"
+      >
+        <span nz-icon [nzType]="'windows'" nzTheme="outline"></span>
+        Sign in with Microsoft
+      </button>
+
+      <nz-alert ngClass="alert"
+        *ngIf="errorMessage" 
+        nzType="error" 
+        [nzMessage]="errorMessage" 
+        class="error-alert"
+      ></nz-alert>
+    </form>
+
+    <div class="contact">
+      <div class="help">CONTACT</div>
+      <div class="help">HELP?</div>
+    </div>
+  </div>
+  
+  <div class="right-section">
+    <div class="content-overlay">
+      <div class="login-bg-image"></div>
+      <div class="number-circle">01</div>
+      <h3>Lorem ipsum dolor sit amet</h3>
+      <p>Sed commodo fermentum tortor, sit amet bibendum lacus dignissim cursus.</p>
+    </div>
+  </div>
+</div>

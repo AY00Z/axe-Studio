@@ -1,0 +1,47 @@
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+
+}
+
+.app-sidebar {
+  width: 50px;
+  flex-shrink: 0; /* Prevents sidebar from shrinking */
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto; /* Allows scrolling if content is too long */
+}
+
+.app-content {
+  flex-grow: 1; 
+  overflow-y: auto; 
+  background-color: #F0F5FC;
+
+
+}
+
+
+.app-content h1 {
+  font-size: 33px;           
+  font-weight: 700;         
+  color: #26415E;       
+  margin: 30px 0 40px 40px;  
+  padding-bottom: 10px;      
+  font-family: 'Inter', sans-serif;
+}
+.app-content p {
+  font-size: 18px;           
+  font-weight: 500;         
+  color: grey;       
+  margin: 30px 0 40px 40px;  
+  padding-bottom: 10px;      
+  border-bottom: 1px solid #c4ccd7;
+  font-family: 'Inter', sans-serif;
+  margin-top: -40px;
+}
+
+
+
+

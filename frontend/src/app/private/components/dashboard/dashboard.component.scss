@@ -1,0 +1,44 @@
+
+.dashboard-container {
+  padding: 2rem;
+  max-width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #F0F5FC;
+}
+
+.dashboard-header {
+  h1 {
+    font-size:  35px;
+    font-weight: bold;
+    color: grey;
+    margin-left: 70px;
+    margin-top: -15px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    color: grey;
+    max-width: 800px;
+    margin-top: -30px;
+    line-height: 1.9;
+    margin-left: 70px;
+  
+  }
+}
+
+.projects-grid {
+   width: 90%;
+   height: 100px;
+   margin-left: 70px;
+  display: grid;
+  margin-top: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));    
+  gap: 55px;
+ 
+  
+}
+
+app-add {
+  display: contents; /* Makes it participate in grid layout */
+}

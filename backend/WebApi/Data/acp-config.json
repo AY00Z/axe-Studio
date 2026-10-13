@@ -1,0 +1,8 @@
+{
+  "acp": {
+    "userName": "admin",
+    "localhost": {
+      "API": "https://localhost:70"
+    }
+  }
+}
